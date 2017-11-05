@@ -1,5 +1,5 @@
 ### fetch
-  Fetch an image from any other docker host.
+  Fetch an image from any other docker host. (docker save => sftp => docker load)
 - #### usage: 
 
 ```bash
