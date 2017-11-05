@@ -14,9 +14,10 @@ docker-compose up -d
 配置:
 
 启动时添加如下环境变量可切换数据库:
-
-DB_HOST          string
+```bash
+DB_HOST          string
 DB_PORT          string
 DB_DATABASE      string
 DB_USERNAME      string
 DB_PASSWORD      string
+```
