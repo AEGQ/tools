@@ -1,0 +1,41 @@
+目的:
+
+根据对Portus数据库的查询操作，提供镜像查询功能.
+
+实现：
+
+http://IP:5050	
+
+1. GET /v1/repos
+
+    获取所有公开的，可以直接pull的镜像。
+
+    返回Json:
+
+	{
+	  "namespace_1":[{"Name":"image_1","Tags":["v_1",]},],
+	  ...
+	}
+
+2. GET /v1/repos/username/:username
+
+    获取和某用户相关的所有公开镜像。
+
+    返回Json：
+
+	{
+	  "namespace_1":[{"Name":"image_1","Tags":["v_1",]},],
+	  ...
+	}
+
+3. GET /v1/auth/:username/:namespace
+
+    验证用户是否是这个namespace的所有者，可用于镜像删除工具的权限验证。
+ 
+    返回Json:
+
+        {
+	  "Auth":true
+        }
+
+

@@ -1,0 +1,14 @@
+db:
+  image: portusapi:latest
+  container_name: portus_api
+  environment:
+    DB_HOST: portus_db_1
+    DB_PORT: 3306
+    DB_DATABASE: portus_development
+    DB_USERNAME: root
+    DB_PASSWORD: portus
+  ports:
+    - 5050:5050
+  external_links:
+    - portus_db_1 
+  restart: always 
