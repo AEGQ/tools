@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 	"text/tabwriter"
@@ -64,6 +65,7 @@ func Tags(image string) (*[]TagResult, error) {
 //PrintImages  STAR  OFFICIAL  NAME  URL
 func PrintImages(results *ImageResults) {
 	images := ImageResultsByStars(results.Results)
+	sort.Sort(images)
 	w := tabwriter.NewWriter(os.Stdout, 10, 1, 3, ' ', 0)
 	fmt.Fprintf(w, "STAR\tOFFICIAL\tNAME\tURL\n")
 	for _, v := range images {
