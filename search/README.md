@@ -10,7 +10,6 @@ go get -u github.com/AEGQ/tools/search
 package main
 
 import (
-  "fmt"
   "log"
 
   "github.com/AEGQ/tools/search"
