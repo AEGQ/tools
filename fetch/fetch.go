@@ -111,7 +111,7 @@ func parseFlag(c *cli.Context, arg string) (username, password, ip, image string
 		image = arrAfterArr[1] + ":latest"
 	} else if lenArrAfterArr >= 3 {
 		ip = arrAfterArr[0]
-		image =  strings.Join(arr_after_arr[1:len_arr_after_arr-1], ":") + ":" + arr_after_arr[len_arr_after_arr-1]
+		image =  strings.Join(arrAfterArr[1:lenArrAfterArr-1], ":") + ":" + arrAfterArr[lenArrAfterArr-1]
 	} else {
 		cli.ShowSubcommandHelp(c)
 		os.Exit(0)
