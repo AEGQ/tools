@@ -3,6 +3,16 @@
 - #### usage: 
 
 ```bash
+# Prepare
+mkdir -p $GOPATH/src/golang.org/x/crypto
+git clone https://github.com/golang/crypto.git $GOPATH/src/golang.org/x/crypto
+go get github.com/pkg/sftp
+go get github.com/urfave/cli
+mkdir -p $GOPATH/src/golang.org/x/sys
+git clone https://github.com/golang/sys.git $GOPATH/src/golang.org/x/sys
+go get gopkg.in/cheggaaa/pb.v1
+
+#Build
 go build -o cli
 ```
 - #### example:
