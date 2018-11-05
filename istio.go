@@ -62,6 +62,7 @@ func (i *istiocrdExecutor) create(varr []istiomodel.Config) (errs error) {
 func (i *istiocrdExecutor) replace(varr []istiomodel.Config) (errs error) {
 
 	for _, config := range varr {
+		fmt.Printf("config: %+v \n", config)
 		var err error
 		if config.Namespace, err = handleNamespaces(config.Namespace); err != nil {
 			return err
