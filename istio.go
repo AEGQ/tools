@@ -70,6 +70,10 @@ func (i *istiocrdExecutor) replace(varr []istiomodel.Config) (errs error) {
 		// fill up revision
 		if config.ResourceVersion == "" {
 			current := i.client.Get(config.Type, config.Name, "default")
+			if current == nil {
+				fmt.Println("current is nil")
+				return
+			}
 			config.ResourceVersion = current.ResourceVersion
 			// clear resourceVersion for rollback
 			current.ResourceVersion = ""
